@@ -1,1 +1,39 @@
+import math
+import re
+
+# x and y are what is being multiplied
+# the idea is that this program finds the end value of this if all digits of y except the first are equal to 0
+x = int(input("X value : "))
+y = int(input('Y value : '))
+t = str(y)
+
+# this is to seperate y into distict, workable digits.This is necessary for the main operation
+y1 = int(t[0])
+y2 = int(t[1])
+y3 = int(t[2])
+y4 = int(t[3])
+y5 = int(t[4])
+
+r = str(y2) + str(y3) + str(y4) + str(y5)
+
+z = float(x * y)
+
+i = int(r) / y1
+i = str(i)
+i = re.sub('\.0$', '', i)
+
+n = "1." + i
+n = float(n)
+
+q = z/n
+
+z = str(z)
+n = str(n)
+q = str(q)
+
+print("x * y = " + z)
+print("n = " + n)
+print("(x*y)/n = " + q)
+
+  
 
