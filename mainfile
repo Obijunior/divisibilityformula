@@ -1,8 +1,6 @@
 import math
 import re
 
-# x and y are what is being multiplied
-# the idea is that this program finds the end value of this if all digits of y except the first are equal to 0
 x = int(input("X value : "))
 y = int(input('Y value : '))
 y_digits = []
@@ -10,18 +8,14 @@ t = str(y)
 
 for j in t:
   y_digits.append(j)
-  print(y_digits)
 
 y_int = []
 i = 0
 
 while i < len(y_digits):
   j = int(i)
-  print(j)
-  print(y_digits[j])
   placeholder = int(y_digits [j])
   y_int.append(placeholder)
-  print(y_int)
   i += 1
 
 y_length = len(y_digits)
@@ -30,7 +24,6 @@ j = 1
 
 while j < len(y_int):
   r = r + str(y_int[j])
-  print(r)
   j += 1
  
 z = float(x * y)
@@ -52,6 +45,6 @@ q = str(q)
 
 print("x * y = " + z)
 print("n = " + n)
-print("(x*y)/n = " + q)
+print("CHECKING - (x*y)/n = " + q)
 
   
