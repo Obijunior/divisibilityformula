@@ -5,22 +5,41 @@ import re
 # the idea is that this program finds the end value of this if all digits of y except the first are equal to 0
 x = int(input("X value : "))
 y = int(input('Y value : '))
+y_digits = []
 t = str(y)
 
-# this is to seperate y into distict, workable digits.This is necessary for the main operation
-y1 = int(t[0])
-y2 = int(t[1])
-y3 = int(t[2])
-y4 = int(t[3])
-y5 = int(t[4])
+for j in t:
+  y_digits.append(j)
+  print(y_digits)
 
-r = str(y2) + str(y3) + str(y4) + str(y5)
+y_int = []
+i = 0
 
+while i < len(y_digits):
+  j = int(i)
+  print(j)
+  print(y_digits[j])
+  placeholder = int(y_digits [j])
+  y_int.append(placeholder)
+  print(y_int)
+  i += 1
+
+y_length = len(y_digits)
+r = ""
+j = 1
+
+while j < len(y_int):
+  r = r + str(y_int[j])
+  print(r)
+  j += 1
+ 
 z = float(x * y)
 
-i = int(r) / y1
+i = int(r) / y_int[0]
 i = str(i)
-i = re.sub('\.0$', '', i)
+
+#removes decimal sign
+i = i.replace(".", "")
 
 n = "1." + i
 n = float(n)
@@ -36,4 +55,3 @@ print("n = " + n)
 print("(x*y)/n = " + q)
 
   
-
