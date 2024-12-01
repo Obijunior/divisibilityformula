@@ -1,50 +1,29 @@
-import math
-import re
-
 x = int(input("X value : "))
-y = int(input('Y value : '))
-y_digits = []
-t = str(y)
+y = input("Y value : ")
 
-for j in t:
-  y_digits.append(j)
+# number that we are dividing
+z = float(x * int(y))
 
-y_int = []
-i = 0
+# makes a list of digits in y
+y_digits = [int(y) for y in y]
 
-while i < len(y_digits):
-  j = int(i)
-  placeholder = int(y_digits [j])
-  y_int.append(placeholder)
-  i += 1
-
-y_length = len(y_digits)
+# creates the decimal portion of the number
 r = ""
-j = 1
+for i in range(len(y) - 1):
+    r = r + str(y_digits[i + 1])
 
-while j < len(y_int):
-  r = r + str(y_int[j])
-  j += 1
- 
-z = float(x * y)
+""" first part creates the final number,
+adding the decimal portion to the end of a 1
+the second part divides decimal portion of number 
+by first digit of second number and removes the decimal point """
+i = float("1." + str(int(r) / y_digits[0]).replace(".", ""))
 
-i = int(r) / y_int[0]
-i = str(i)
+# checks to make sure n works even if Python isn't precise enough
+q = round((z / i), 2)
 
-#removes decimal sign
-i = i.replace(".", "")
-
-n = "1." + i
-n = float(n)
-
-q = z/n
-
-z = str(z)
-n = str(n)
-q = str(q)
-
-print("x * y = " + z)
-print("n = " + n)
-print("CHECKING - (x*y)/n = " + q)
-
-  
+print("\nCHECKING\n")
+print("x * y = z")
+print("z =", str(z), "\n")
+print("n =", str(i), "\n")
+print("z / n = q")
+print("q =", str(q))
